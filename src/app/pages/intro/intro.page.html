@@ -1,0 +1,76 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery Delivery App Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-content>
+  <swiper-container #swiper (slidechange)="slideChanged($event)">
+    <swiper-slide>
+      <div class="slide-content">
+        <div [style.backgroundImage]="'url(assets/imgs/sliders/3.png)'" class="back_img">
+        </div>
+        <ion-label class="head-title">{{util.translate('Fresh Grocery & Vegetables')}} </ion-label>
+        <ion-label class="sub-title">
+          {{getContent(1)}}
+        </ion-label>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="slide-content">
+        <div [style.backgroundImage]="'url(assets/imgs/sliders/4.png)'" class="back_img">
+        </div>
+        <ion-label class="head-title">{{util.translate('Eco-Friendly Grocery Shopping')}} </ion-label>
+        <ion-label class="sub-title">
+          {{getContent(2)}}
+        </ion-label>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="slide-content">
+        <div [style.backgroundImage]="'url(assets/imgs/sliders/1.png)'" class="back_img">
+        </div>
+        <ion-label class="head-title">{{util.translate('Best Quality, Affordable')}} </ion-label>
+        <ion-label class="sub-title">{{getContent(3)}}
+        </ion-label>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="slide-content">
+        <div [style.backgroundImage]="'url(assets/imgs/sliders/2.png)'" class="back_img">
+        </div>
+        <ion-label class="head-title">{{util.translate('Free Delivery Service')}} </ion-label>
+        <ion-label class="sub-title">{{getContent(4)}}
+        </ion-label>
+
+        <ion-button (click)="onLogin()" expand="block" shape="round">
+          {{util.translate('Get Started')}}
+        </ion-button>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="pagers">
+    <div *ngFor="let item of items" [class]="item == index ?'active':'deactive'"></div>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isLast == false">
+    <ion-fab-button (click)="onLogin()">
+      {{util.translate('Skip')}}
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer class="ion-no-border" mode="md">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-select [(ngModel)]="langId" [placeholder]="util.translate('Select Languages')" (ionChange)="changeLanguage()"
+        *ngIf="languages?.length" interface="popover">
+        <ion-select-option [value]="item.id" *ngFor="let item of languages">{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

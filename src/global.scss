@@ -1,0 +1,803 @@
+/*
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery Delivery App Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+*/
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: "regular";
+  src: url(assets/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: "medium";
+  src: url(assets/fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: "semi-bold";
+  src: url(assets/fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "bold";
+  src: url(assets/fonts/Montserrat-Bold.ttf);
+}
+
+* {
+  font-family: "regular";
+}
+
+ion-title {
+  font-family: 'bold';
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+ion-modal.custom_modal {
+  .modal-wrapper {
+    width: 100% !important;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+
+  &.bottom {
+    align-items: flex-end !important;
+  }
+
+  --height: 400px;
+  align-items: flex-end;
+}
+
+.bg_image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head {
+  font-size: 1.2rem;
+  font-family: bold;
+  margin: 5px 0px;
+}
+
+.sub_head {
+  font-size: 1rem;
+  font-family: "regular";
+  margin: 5px 0px;
+}
+
+.zipcode {
+  text-align: center;
+  border: 1px solid lightgray;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.location_div {
+  padding: 24px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+
+  .map_image {
+    width: 100%;
+    height: 180px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+
+  ion-label {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 50px;
+  }
+
+  .light_btn {
+    margin-top: 20px;
+  }
+}
+
+.refresh_btn {
+  width: max-content;
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+
+ion-label {
+  display: block;
+  font-family: "regular";
+}
+
+ion-input {
+  font-family: "regular";
+}
+
+.login_style_one {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+
+  .logo_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-direction: column;
+
+    img {
+      width: 50px;
+    }
+
+    ion-label {
+      color: white;
+      font-family: "medium";
+      font-size: 24px;
+      margin-left: 5px;
+    }
+  }
+
+  .white_box {
+    padding: 14px;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .welcome_lbl {
+      font-size: 22px;
+      font-family: "semi-bold";
+      text-align: center;
+      color: white;
+    }
+
+    .small_lbl {
+      font-size: 14px;
+      color: white;
+      text-align: center;
+    }
+
+    .cc_col {
+      padding: 0px;
+      margin: 0px;
+      --padding-bottom: 0px;
+      --padding-top: 0px;
+    }
+
+    .mobile_col {
+      padding: 0px 0px 0px 5px;
+    }
+
+    ion-input {
+      --background: #ffffff82;
+      --color: white;
+      height: 50px;
+      border-radius: 10px;
+      --padding-start: 10px;
+      margin: 20px 0px;
+      --placeholder-color: white;
+      --placeholder-opacity: 1;
+    }
+
+    .forgot_lbl {
+      color: white;
+      text-align: right;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    ion-button {
+      width: 100%;
+      text-align: center;
+      margin: 0px;
+    }
+
+    .bold_lbl {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-family: "semi-bold";
+      text-align: center;
+    }
+
+    .social_div {
+      display: flex;
+
+      ion-button {
+        --background: white;
+        color: black;
+        --border-radius: 25px;
+        border-radius: 25px;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+        font-family: "medium";
+        letter-spacing: 0px;
+        margin: 0px;
+
+        img {
+          width: 20px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .div_chk {
+      width: 100%;
+      margin: 20px 0px;
+      position: relative;
+
+      .lbl_police {
+        font-size: 10px;
+        margin-left: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .span_term {
+        color: white;
+        margin-right: 10px;
+      }
+
+      .chk {
+        --size: 20px;
+        --border-radius: 5px !important;
+        --border-color-checked: var(--ion-color-primary);
+      }
+
+      .lbl_by {
+        display: block;
+        font-size: 10px;
+        color: white;
+        margin-top: 10px;
+      }
+
+      .span_termm {
+        color: white;
+        margin-right: 10px;
+      }
+    }
+
+    .reg_lbl {
+      color: white;
+      text-align: center;
+      font-size: 16px;
+
+      span {
+        font-family: "semi-bold";
+      }
+    }
+  }
+}
+
+.login_style_two {
+  overflow: scroll;
+
+  .item-content {
+    padding: 14px;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .logo_div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      img {
+        width: 50px;
+      }
+
+      ion-label {
+        color: var(--ion-color-primary);
+        font-family: "medium";
+        font-size: 24px;
+        margin-left: 5px;
+      }
+    }
+
+    .welcome_lbl {
+      font-size: 22px;
+      font-family: "semi-bold";
+      text-align: center;
+      color: var(--ion-color-primary);
+    }
+
+    .small_lbl {
+      font-size: 14px;
+      color: var(--ion-color-primary);
+      text-align: center;
+    }
+
+    .cc_col {
+      padding: 0px;
+      margin: 0px;
+      --padding-bottom: 0px;
+      --padding-top: 0px;
+    }
+
+    .mobile_col {
+      padding: 0px 0px 0px 5px;
+    }
+
+    .border-item {
+      border: 1px solid gray;
+      margin-top: 10px;
+      border-radius: 10px;
+
+      .toggle_btn {
+        position: absolute;
+        right: 0px;
+        z-index: 9999;
+      }
+    }
+
+    .forgot_lbl {
+      color: var(--ion-color-primary);
+      text-align: right;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .block_btn {
+      width: 100%;
+    }
+
+    .div_chk {
+      width: 100%;
+      margin: 20px 0px;
+      position: relative;
+
+      .lbl_police {
+        font-size: 10px;
+        margin-left: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .span_term {
+        color: var(--ion-color-primary);
+        margin-right: 10px;
+      }
+
+      .chk {
+        --size: 20px;
+        --border-radius: 5px !important;
+        --border-color-checked: var(--ion-color-primary);
+      }
+
+      .lbl_by {
+        display: block;
+        font-size: 10px;
+        color: var(--ion-color-primary);
+        margin-top: 10px;
+      }
+
+      .span_termm {
+        color: var(--ion-color-primary);
+        margin-right: 10px;
+      }
+    }
+
+    .reg_lbl {
+      color: var(--ion-color-primary);
+      text-align: center;
+      font-size: 16px;
+
+      span {
+        font-family: "semi-bold";
+      }
+    }
+  }
+}
+
+.login_style_three {
+  background: var(--ion-color-primary);
+  height: 100vh;
+  overflow: scroll;
+
+  .main_content_div {
+    padding: 16px;
+
+    .logo_div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      img {
+        width: 50px;
+      }
+
+      ion-label {
+        color: white;
+        font-family: "medium";
+        font-size: 24px;
+        margin-left: 5px;
+      }
+    }
+
+    .white_box {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 16px;
+
+      .welcome_lbl {
+        font-size: 22px;
+        font-family: "semi-bold";
+        text-align: center;
+      }
+
+      .small_lbl {
+        font-size: 14px;
+        color: grey;
+        text-align: center;
+      }
+
+      ion-item {
+        --padding-start: 0px;
+        font-family: "regular";
+        margin-top: 20px;
+
+        .label-floating {
+          font-family: "regular";
+        }
+
+        ion-input {
+          font-family: "regular";
+        }
+
+        .toggle_btn {
+          position: absolute;
+          right: 0px;
+          z-index: 9999;
+          bottom: 0px;
+          width: max-content;
+        }
+      }
+
+      .forgot_lbl {
+        color: var(--ion-color-primary);
+        text-align: right;
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+
+      ion-button {
+        width: 100%;
+        text-align: center;
+        margin: 0px;
+      }
+
+      .bold_lbl {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-family: "semi-bold";
+        text-align: center;
+      }
+
+      .social_div {
+        display: flex;
+
+        ion-button {
+          --background: white;
+          color: black;
+          --border-radius: 25px;
+          border-radius: 25px;
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+          font-family: "medium";
+          letter-spacing: 0px;
+          margin: 0px;
+
+          img {
+            width: 20px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    .div_chk {
+      width: 100%;
+      margin: 20px 0px;
+      position: relative;
+
+      .lbl_police {
+        font-size: 10px;
+        margin-left: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .span_term {
+        color: var(--ion-color-primary);
+        margin-right: 10px;
+      }
+
+      .chk {
+        --size: 20px;
+        --border-radius: 5px !important;
+        --border-color-checked: var(--ion-color-primary);
+      }
+
+      .lbl_by {
+        display: block;
+        font-size: 10px;
+        color: var(--ion-color-primary);
+        margin-top: 10px;
+      }
+
+      .span_termm {
+        color: var(--ion-color-primary);
+        margin-right: 10px;
+      }
+    }
+
+    .reg_lbl {
+      color: white;
+      text-align: center;
+      font-size: 16px;
+
+      span {
+        font-family: "semi-bold";
+      }
+    }
+  }
+}
+
+.login_style_four {
+  // background: var(--ion-color-primary);
+  background-image: linear-gradient(var(--ion-color-primary), #f7800d);
+  height: 100vh;
+  overflow: scroll;
+
+  .main_content_div {
+    padding: 16px;
+
+    .logo_div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      img {
+        width: 50px;
+      }
+
+      ion-label {
+        color: white;
+        font-family: "medium";
+        font-size: 24px;
+        margin-left: 5px;
+      }
+    }
+
+    .white_box {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 16px;
+
+      .welcome_lbl {
+        font-size: 22px;
+        font-family: "semi-bold";
+        text-align: center;
+      }
+
+      .small_lbl {
+        font-size: 14px;
+        color: grey;
+        text-align: center;
+      }
+
+      ion-item {
+        --padding-start: 0px;
+        font-family: "regular";
+        margin-top: 20px;
+
+        .label-floating {
+          font-family: "regular";
+        }
+
+        ion-input {
+          font-family: "regular";
+        }
+
+        .toggle_btn {
+          position: absolute;
+          right: 0px;
+          z-index: 9999;
+          bottom: 0px;
+          width: max-content;
+        }
+      }
+
+      .forgot_lbl {
+        color: var(--ion-color-primary);
+        text-align: right;
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+
+      ion-button {
+        width: 100%;
+        text-align: center;
+        margin: 0px;
+      }
+
+      .bold_lbl {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-family: "semi-bold";
+        text-align: center;
+      }
+
+      .social_div {
+        display: flex;
+
+        ion-button {
+          --background: white;
+          color: black;
+          --border-radius: 25px;
+          border-radius: 25px;
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+          font-family: "medium";
+          letter-spacing: 0px;
+          margin: 0px;
+
+          img {
+            width: 20px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    .div_chk {
+      width: 100%;
+      margin: 20px 0px;
+      position: relative;
+
+      .lbl_police {
+        font-size: 10px;
+        margin-left: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .span_term {
+        color: var(--ion-color-primary);
+        margin-right: 10px;
+      }
+
+      .chk {
+        --size: 20px;
+        --border-radius: 5px !important;
+        --border-color-checked: var(--ion-color-primary);
+      }
+
+      .lbl_by {
+        display: block;
+        font-size: 10px;
+        color: var(--ion-color-primary);
+        margin-top: 10px;
+      }
+
+      .span_termm {
+        color: var(--ion-color-primary);
+        margin-right: 10px;
+      }
+    }
+
+    .reg_lbl {
+      color: white;
+      text-align: center;
+      font-size: 16px;
+
+      span {
+        font-family: "semi-bold";
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}

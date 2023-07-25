@@ -1,0 +1,26 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery Delivery App Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-header class="ion-no-border" mode="ios">
+  <ion-toolbar>
+    <ion-title>{{util.translate('Server Error')}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <ion-label class="head">{{util.translate('Something went wrong...')}} </ion-label>
+    <ion-label class="sub_head">{{util.translate('We are working on fixing the problem.')}} <br>
+      {{util.translate('Please try again...')}} </ion-label>
+
+    <ion-button (click)="onRefresh()" expand="block" fill="clear" shape="round" class="refresh_btn">
+      <ion-icon slot="start" name="refresh-outline"></ion-icon>
+      {{util.translate('Refresh')}}
+    </ion-button>
+  </div>
+
+</ion-content>

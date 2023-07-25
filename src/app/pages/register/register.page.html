@@ -1,0 +1,130 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery Delivery App Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-header class="ion-no-border" mode="md">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{util.translate('Register Your Account')}} </ion-title>
+  </ion-toolbar>
+  <div class="stepper_div">
+    <div [class.active]="slideID >= 0"></div>
+    <div [class.active]="slideID >= 1"></div>
+    <div [class.active]="slideID >= 2"></div>
+    <div [class.active]="slideID >= 3"></div>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="main_content_div">
+    <swiper-container #swiper [slidesPerView]="1" [allowTouchMove]="false">
+      <swiper-slide>
+        <div class="slider_div">
+
+          <ion-row>
+            <ion-col size="3" (click)="openCountry()">
+              <ion-item>
+                <ion-input [(ngModel)]="loginWithPhoneOTP.country_code" disabled="true" type="text" placeholder="+1">
+                </ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="9">
+              <ion-item>
+                <ion-input [(ngModel)]="loginWithPhoneOTP.mobile" type="number" placeholder="*********"> </ion-input>
+              </ion-item>
+
+            </ion-col>
+          </ion-row>
+
+          <ion-button expand="block" mode="ios" shape="round" (click)="verifyPhone()">
+            {{util.translate('Verify Phone')}}
+          </ion-button>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="slider_div">
+
+          <ion-item>
+            <ion-label position="floating">{{util.translate('E-Mail')}} </ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+          </ion-item>
+
+          <ion-button expand="block" mode="ios" shape="round" (click)="verifyEmail()">
+            {{util.translate('Verify E-mail')}}
+          </ion-button>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="slider_div">
+
+          <ion-item>
+            <ion-label position="floating">{{util.translate('First Name')}} </ion-label>
+            <ion-input type="text" [(ngModel)]="first_name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">{{util.translate('Last Name')}} </ion-label>
+            <ion-input type="text" [(ngModel)]="last_name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">{{util.translate('Password')}} </ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">{{util.translate('Confirm Password')}} </ion-label>
+            <ion-input type="password" [(ngModel)]="confirm_password"></ion-input>
+          </ion-item>
+
+          <ion-item style="margin-top: 30px;">
+            <ion-label>{{util.translate('Gender')}} </ion-label>
+            <ion-select [placeholder]="util.translate('Gender')" [(ngModel)]="driver_gender">
+              <ion-select-option [value]="1">{{util.translate('Male')}} </ion-select-option>
+              <ion-select-option [value]="0">{{util.translate('Female')}} </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-button expand="block" mode="ios" shape="round" (click)="saveBasic()">
+            {{util.translate('Continue')}}
+          </ion-button>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="slider_div">
+
+          <div class="user_img" [ngStyle]="{'background-image':'url('+api.mediaURL+driver_cover+'),url(assets/bg.png)'}"
+            (click)="updateProfile()">
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">{{util.translate('Your Address')}} </ion-label>
+            <ion-textarea type="text" [(ngModel)]="driver_address" rows="5"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">{{util.translate('Choose City')}} </ion-label>
+            <ion-select [(ngModel)]="city_id" [placeholder]="util.translate('Choose City')">
+              <ion-select-option *ngFor="let item of util.servingCities" [value]="item.id">{{item.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+          <ion-button expand="block" mode="ios" shape="round" (click)="saveStoreInfo()">
+            {{util.translate('Continue')}}
+          </ion-button>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</ion-content>

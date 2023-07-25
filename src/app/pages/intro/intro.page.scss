@@ -1,0 +1,65 @@
+/*
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : Grocery Delivery App Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+*/
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+
+  .back_img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+
+  .head-title {
+    display: block;
+    font-size: 18px;
+    padding: 30px 14px;
+    font-family: "semi-bold";
+    color: var(--ion-color-primary);
+  }
+
+  .sub-title {
+    display: block;
+    font-size: 14px;
+    color: gray;
+    padding: 10px 14px;
+  }
+
+  ion-button {
+    width: max-content;
+    margin-top: 20px;
+  }
+}
+
+.pagers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  .active {
+    width: 40px;
+    height: 10px;
+    background: var(--ion-color-primary);
+    border-radius: 20px;
+    margin: 0px 5px;
+  }
+
+  .deactive {
+    width: 10px;
+    height: 10px;
+    background: lightgray;
+    border-radius: 20px;
+    margin: 0px 5px;
+  }
+}
